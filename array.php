@@ -7,6 +7,7 @@ $vegetable = [
     "lettuce"
 ];
 
+// 1番目の要素にアクセス
 // 添え字に整数を用いる
 echo $vegetable[0], PHP_EOL;
 
@@ -23,6 +24,7 @@ $vegetable_color = [
     "lettuce" => "green"
 ];
 
+// 1番目の要素にアクセス
 // 添え字に文字列を用いる
 echo $vegetable_color["carrot"], PHP_EOL;
 
