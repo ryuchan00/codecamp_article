@@ -11,4 +11,3 @@ foreach ($array as $value) {
     echo "$value.", PHP_EOL;
 }
 ?>
-a
