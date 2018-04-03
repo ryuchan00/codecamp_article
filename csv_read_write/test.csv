@@ -1,4 +1,4 @@
-"name","position","birthplace"
+"name","position","birthplace","remarks"
 "yamada","CEO","Kyoto"
-"shimoji","CTO","Mie"
+"shimoji","CTO","Mie","from Kyoto.inc"
 "yamakawa","developer","Tokyo"
