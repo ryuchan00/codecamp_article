@@ -1,10 +1,10 @@
 <?php
 
-$list = array(
-    array('aaa', 'bbb', 'ccc', 'dddd'),
-    array('123', '456', '789'),
-    array("aaa \n\r ccc", "bbb")
-);
+$list = [
+    ['aaa', 'bbb', 'ccc', 'dddd'],
+    ['123', '456', '789'],
+    ["aaa \n\r ccc", "bbb"]
+];
 
 $fp = fopen('file.csv', 'w');
 

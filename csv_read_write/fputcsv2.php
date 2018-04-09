@@ -1,6 +1,6 @@
 <?php
 
-$fields = array($_POST['column1'], $_POST['column2']);
+$fields = [$_POST['column1'], $_POST['column2']];
 
 $fp = fopen('file2.csv', 'w');
 

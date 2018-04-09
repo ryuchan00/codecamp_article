@@ -13,5 +13,5 @@ foreach ($inputFile as $row) {
     // 読み込んだCSVを元に文章を作成する
     $sentence = sprintf("%sの足は%d本ある", $animal, $legs);
     // SplFileObject::fputcsv()関数を使って、optput_animals.csvに書き出す。
-    $outputFile->fputcsv(array($animal, $legs, $sentence));
+    $outputFile->fputcsv([$animal, $legs, $sentence]);
 }
