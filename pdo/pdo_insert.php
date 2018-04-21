@@ -12,3 +12,12 @@ try {
     echo "接続失敗: " . $e->getMessage() . "\n";
 }
 
+// SQL文を準備します。「:id」「:name」がプレースホルダーです。
+$sql = 'INSERT INTO user (id, name) VALUE (:id, :name)';
+$prepare = $dbh->prepare($sql);
+
+$prepare->bindValue(':id', 4);
+$prepare->bindValue(':name', 'kobayashi');
+$result = $prepare->execute();
+
+var_dump($result);
