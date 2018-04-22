@@ -10,9 +10,17 @@ try {
     echo "接続成功\n";
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage() . "\n";
+    exit();
 }
 
 // SQL文を準備します。「:id」「:name」がプレースホルダーです。
+$sql = 'DELETE FROM user WHERE name=:name)';
+$prepare = $dbh->prepare($sql);
+
+$prepare->bindValue(':name', 'kobayashi', PDO::PARAM_STR);
+$prepare->execute();
+
+// INSERTされたデータを確認
 $sql = 'SELECT * FROM user';
 $prepare = $dbh->prepare($sql);
 

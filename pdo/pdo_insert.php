@@ -10,14 +10,22 @@ try {
     echo "接続成功\n";
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage() . "\n";
+    exit();
 }
 
 // SQL文を準備します。「:id」「:name」がプレースホルダーです。
 $sql = 'INSERT INTO user (id, name) VALUE (:id, :name)';
 $prepare = $dbh->prepare($sql);
 
-$prepare->bindValue(':id', 4);
-$prepare->bindValue(':name', 'kobayashi');
-$result = $prepare->execute();
+$prepare->bindValue(':id', 4, PDO::PARAM_INT);
+$prepare->bindValue(':name', 'kobayashi', PDO::PARAM_STR);
+$prepare->execute();
 
+// INSERTされたデータを確認
+$sql = 'SELECT * FROM user';
+$prepare = $dbh->prepare($sql);
+
+$prepare->execute();
+
+$result = $prepare->fetchAll(PDO::FETCH_NUM);
 var_dump($result);
