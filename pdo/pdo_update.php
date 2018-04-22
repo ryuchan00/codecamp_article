@@ -21,11 +21,11 @@ $prepare->bindValue(':id', 4, PDO::PARAM_INT);
 $prepare->bindValue(':name', 'kikuchi', PDO::PARAM_STR);
 $prepare->execute();
 
-// INSERTされたデータを確認
+// UPDATEされたデータを確認
 $sql = 'SELECT * FROM user';
 $prepare = $dbh->prepare($sql);
 
 $prepare->execute();
 
-$result = $prepare->fetchAll(PDO::FETCH_NUM);
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 var_dump($result);

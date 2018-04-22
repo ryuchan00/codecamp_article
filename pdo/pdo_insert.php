@@ -27,5 +27,5 @@ $prepare = $dbh->prepare($sql);
 
 $prepare->execute();
 
-$result = $prepare->fetchAll(PDO::FETCH_NUM);
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 var_dump($result);

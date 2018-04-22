@@ -13,18 +13,18 @@ try {
     exit();
 }
 
-// SQL文を準備します。「:id」「:name」がプレースホルダーです。
-$sql = 'DELETE FROM user WHERE name=:name)';
+// SQL文を準備します。「:id」がプレースホルダーです。
+$sql = 'DELETE FROM user WHERE id=:id';
 $prepare = $dbh->prepare($sql);
 
-$prepare->bindValue(':name', 'kobayashi', PDO::PARAM_STR);
+$prepare->bindValue(':id', 4, PDO::PARAM_INT);
 $prepare->execute();
 
-// INSERTされたデータを確認
+// DELETEされたデータを確認
 $sql = 'SELECT * FROM user';
 $prepare = $dbh->prepare($sql);
 
 $prepare->execute();
 
-$result = $prepare->fetchAll(PDO::FETCH_NUM);
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 var_dump($result);
