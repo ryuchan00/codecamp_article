@@ -10,7 +10,7 @@ $prepare->bindValue(':id', 4, PDO::PARAM_INT);
 $prepare->bindValue(':name', 'kikuchi', PDO::PARAM_STR);
 $prepare->execute();
 
-// UPDATEされたデータを確認
+// UPDATEされたデータを確認します
 $sql = 'SELECT * FROM user';
 $prepare = $dbh->prepare($sql);
 

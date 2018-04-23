@@ -9,7 +9,7 @@ $prepare = $dbh->prepare($sql);
 $prepare->bindValue(':id', 4, PDO::PARAM_INT);
 $prepare->execute();
 
-// DELETEされたデータを確認
+// DELETEされたデータを確認します
 $sql = 'SELECT * FROM user';
 $prepare = $dbh->prepare($sql);
 
